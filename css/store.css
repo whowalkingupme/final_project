@@ -1,0 +1,263 @@
+.site-header {
+    width: 100%;
+    position: fixed;
+}
+
+
+/* 回到頂部按鈕 開始 */
+
+#backToTopBtn {
+    display: block;
+    position: fixed;
+    bottom: 30px;
+    height: 44px;
+    right: 70px;
+    z-index: 99;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    background-color: #626262;
+    color: #fff;
+    cursor: pointer;
+    padding: 8px 16px;
+    border-radius: 12%;
+    transition: background-color 0.3s ease;
+}
+
+#backToTopBtn:hover {
+    background-color: #555;
+}
+
+/* 回到頂部按鈕 結束 */
+
+
+/* 麵包屑樣式 開始 */
+.breadcrumb {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 20px;
+}
+
+.breadcrumb li {
+    margin-right: 10px;
+}
+
+.breadcrumb li:not(:last-child)::after {
+    content: ">";
+    margin-left: 10px;
+    color: #999;
+}
+
+.breadcrumb li a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.breadcrumb li a:hover {
+    color: #666;
+}
+
+.breadcrumb li a.home {
+    color: #474343;
+}
+
+.breadcrumb li a.home:hover {
+    color: #000;
+}
+
+/* 麵包屑樣式 結束 */
+
+.background {
+    position: relative;
+}
+
+.background::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+.background img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+}
+
+.p-maincontent {
+    padding-top: 70px;
+    padding-bottom: 70px;
+    position: relative;
+}
+
+.p-maincontent .container {
+    margin: 0 auto;
+    max-width: 1440px;
+}
+
+.container .subhead-wrap {
+    width: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 15px 10px;
+    border-bottom: 1px solid #333;
+}
+
+.subhead-wrap .subhead {
+    font-size: 36px;
+    font-family: "Playfair Display", serif;
+    font-weight: 800;
+    color: #424040;
+}
+
+#result {
+    background-color: #f4f4f4;
+    margin-top: 40px;
+    font-size: 28px;
+    text-align: center;
+}
+
+#result table {
+    width: 100%;
+
+}
+
+#result th,
+#result td {
+    border: none;
+    text-align: center;
+}
+
+#result th {
+    padding: 12px;
+    font-size: 20px;
+    color: #fff;
+    background-color: #1f1f1f;
+}
+
+#result td {
+    font-size: 18px;
+    padding: 16px;
+    border-bottom: 1px solid #d2d2d2;
+}
+
+#result tr:hover td {
+    background-color: #cdcccc;
+}
+
+#result td a i {
+    font-size: 25px;
+    color: #555;
+}
+
+#result td a:hover i {
+    color: #fa4438;
+}
+
+#pagination {
+    margin: 30px 0;
+    width: 100%;
+    text-align: center;
+}
+
+#pagination .prev,
+#pagination .next {
+    padding: 6px 12px;
+    background-color: #f1f1f1;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+#pagination .prev {
+    margin-right: 10px;
+}
+
+#pagination .next {
+    margin-left: 10px;
+}
+
+
+#pagination .prev:hover,
+#pagination .next:hover {
+    color: #fff;
+    background-color: #3b3b3b;
+}
+
+.pagination-button {
+    padding: 8px 16px;
+    font-size: 17px;
+    border: 1px solid #ddd;
+    margin: 0 2px;
+    background-color: #f2f2f2;
+    cursor: pointer;
+}
+
+.pagination-button.active {
+    background-color: #3b3b3b;
+    color: #fff;
+    border: 1px solid #626161;
+}
+
+.city-selector-header {
+    display: flex;
+    padding: 30px 10px;
+    width: 100%;
+    background-color: #d8d8d8;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+.city-selector-header h3 {
+    margin:0 15px;
+    font-size: 24px;
+    padding: 0 10px;
+    text-align: start;
+}
+
+.city-selector-header .select-list {
+    font-size: 22px;
+    line-height: 1.2;
+}
+
+/* 下拉選單樣式 */
+.city-selector-header .select-list select,
+.city-selector-header .select-list input {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+    font-size: 22px;
+    width: 250px;
+    height: 32px;
+}
+
+
+/* 文本輸入框樣式 */
+.input-style {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+/* 按鈕樣式 */
+.select-list button {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.select-list button:hover {
+    background-color: #0056b3;
+}

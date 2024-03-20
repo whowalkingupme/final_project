@@ -1,0 +1,257 @@
+.site-header {
+    width: 100%;
+    position: fixed;
+}
+
+
+/* news 頁面開始 */
+.background {
+    position: relative;
+}
+
+.text-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-size: 60px;
+    font-weight: 400;
+    line-height: 80px;
+    font-family: "Playfair Display", serif;
+    /* 其他樣式設置 */
+}
+
+.background img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+}
+
+.p-maincontent {
+    padding-top: 70px;
+    padding-bottom: 70px;
+    position: relative;
+}
+
+.p-maincontent .container {
+    margin: 0 auto;
+    max-width: 1440px;
+}
+
+.container .subhead-wrap {
+    width: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #333;
+}
+
+.subhead-wrap .subhead {
+    font-size: 36px;
+    font-family: "Playfair Display", serif;
+    font-weight: 800;
+    color: #424040;
+}
+
+/* 重置麵包屑樣式 */
+.breadcrumb {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 20px;
+}
+
+.breadcrumb li {
+    margin-right: 10px;
+}
+
+.breadcrumb li:not(:last-child)::after {
+    content: ">";
+    margin-left: 10px;
+    color: #999;
+}
+
+.breadcrumb li a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.breadcrumb li a:hover {
+    color: #666;
+}
+
+.breadcrumb li a.home {
+    color: #474343;
+}
+
+.breadcrumb li a.home:hover {
+    color: #000;
+}
+
+.items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+
+.items .item {
+    margin: 20px 0;
+    width: 30%;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+
+.items .item:hover {
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.items .item .pic img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+.items .item .pic {
+    overflow: hidden;
+    /* 確保圖片不會超出容器 */
+}
+
+.items .item .pic img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: all 0.3s ease;
+    /* 添加過渡效果 */
+}
+
+.items .item:hover .pic img {
+    transform: scale(1.1);
+}
+
+.items .item .txt {
+    padding: 20px;
+}
+
+.items .item .txt .date {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.items .item .txt .mon {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.items .item .txt .year {
+    font-size: 14px;
+    color: #888;
+}
+
+.items .item .txt p {
+    color: #424040;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.items .item .txt p:hover {
+    color: #716f6f;
+}
+
+
+/* 分頁開始 */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.pagination a {
+    color: #333;
+    text-decoration: none;
+    padding: 8px 16px;
+    border: 1px solid #ddd;
+    transition: background-color 0.3s;
+}
+
+.pagination a.active {
+    background-color: #3b3b3b;
+    color: #fff;
+    border: 1px solid #626161;
+}
+
+.pagination a:hover:not(.active) {
+    background-color: #f1f1f1;
+}
+
+.pagination .pages {
+    font-size: 18px;
+    text-align: center;
+}
+
+.pagination .prev,
+.pagination .next {
+    background-color: #f1f1f1;
+    font-size: 20px;
+    line-height: 25px;
+}
+
+.pagination .prev {
+    margin-right: 10px;
+}
+
+.pagination .next {
+    margin-left: 10px;
+}
+
+.pagination a.prev:hover,
+.pagination a.next:hover {
+    color: #fff;
+    background-color: #3b3b3b;
+}
+
+/* 分頁結束 */
+
+/* 回到頂部按鈕 開始 */
+
+#backToTopBtn {
+    display: block;
+    position: fixed;
+    bottom: 30px;
+    height: 44px;
+    right: 70px;
+    z-index: 99;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    background-color: #626262;
+    color: #fff;
+    cursor: pointer;
+    padding: 8px 16px;
+    border-radius: 12%;
+    transition: background-color 0.3s ease;
+}
+
+#backToTopBtn:hover {
+    background-color: #555;
+}
+
+/* 回到頂部按鈕 結束 */
+
+/* news 結束開始 */

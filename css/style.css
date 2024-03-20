@@ -1,0 +1,299 @@
+/** @format */
+
+body {
+  font-family: "Noto Sans TC", sans-serif;
+}
+
+/* Header Styles */
+
+.site-header {
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 999;
+}
+
+.site-header>.container {
+  margin: 0 auto;
+  max-width: 1920px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.header-logo img {
+  max-width: 200px;
+  margin: 15px 0;
+  height: auto;
+}
+
+.main-navigation .menu {
+  display: flex;
+  list-style: none;
+}
+
+.main-navigation .menu li {
+  margin: 0 30px;
+  position: relative;
+}
+
+.main-navigation .menu li a {
+  color: #333;
+  text-decoration: none;
+  line-height: 80px;
+  font-size: 22px;
+  font-weight: 600;
+  transition: color 0.1s ease;
+  display: block;
+  padding: 0 5px;
+}
+
+.main-navigation .menu li:hover>a,
+.main-navigation .menu li:hover {
+  color: #ff6600;
+}
+
+.main-navigation .menu li:hover::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #ff6600;
+}
+
+.menu li.active a {
+  color: #ff6600; /* 激活時鏈接文本顏色 */
+}
+
+.menu li.active::after{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #ff6600;
+}
+
+.icon {
+  text-align: center;
+}
+
+.icon ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+.icon ul li {
+  margin: 0 15px;
+}
+
+.icon ul li a {
+  color: #333;
+  font-size: 36px;
+  transition: color 0.3s ease;
+}
+
+/* Facebook */
+.icon ul li a .fa-facebook {
+  color: #3b5998;
+}
+
+.icon ul li a:hover .fa-facebook {
+  color: #2d4373;
+}
+
+/* Instagram */
+.icon ul li a .fa-instagram {
+  color: #e1306c;
+}
+
+.icon ul li a:hover .fa-instagram {
+  color: #c13584;
+}
+
+/* YouTube */
+.icon ul li a .fa-youtube {
+  color: #ff0000;
+}
+
+.icon ul li a:hover .fa-youtube {
+  color: #cc0000;
+}
+
+/* Line */
+.icon ul li a .fa-line {
+  color: #00c300;
+}
+
+.icon ul li a:hover .fa-line {
+  color: #009900;
+}
+
+.swiper-slide img {
+  width: 100%;
+  object-fit: cover;
+  height: 750px;
+}
+
+.swiper .swiper-button-prev,
+.swiper .swiper-button-next {
+  transform: scale(1, 1.5);
+  position: absolute;
+  color: #fff;
+  opacity: 0;
+  /* 默認隱藏 */
+  transition: opacity 0.3s ease;
+  /* 添加過渡效果 */
+}
+
+.swiper:hover .swiper-button-prev,
+.swiper:hover .swiper-button-next {
+  opacity: 1;
+  /* 鼠標懸停時顯示 */
+}
+
+.swiper .swiper-button-prev {
+  margin-left: 50px;
+}
+
+.swiper .swiper-button-next {
+  margin-right: 50px;
+}
+
+.swiper .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: #ccc;
+  opacity: 1;
+  transition: background-color 0.3s ease;
+}
+
+.swiper .swiper-pagination-bullet-active {
+  background-color: #ff6600;
+}
+
+.swiper.swiper-pagination-bullet:hover {
+  background-color: #999;
+}
+
+/* Footer Styles */
+.footer {
+  color: #fff;
+}
+
+.footer .f-top {
+  display: flex;
+  justify-content: center;
+  background-color: #333;
+  padding-top: 48px;
+}
+
+.footer .f-logo img {
+  max-width: 240px;
+  height: auto;
+}
+
+.footer .f-top ul {
+  list-style: none;
+  display: flex;
+  text-align: center;
+  flex-wrap: wrap;
+  margin: 0 40px;
+}
+
+.footer .box {
+  padding: 0 20px;
+  margin-bottom: 30px;
+}
+
+.footer .box ul {
+  flex-direction: column;
+  text-align: center;
+}
+
+.footer .box .tit {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 18px;
+  display: block;
+}
+
+.footer .box ul li a {
+  display: block;
+  margin-bottom: 16px;
+  font-size: 18px;
+  text-align: center;
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer .box ul li a:hover {
+  color: #fff;
+}
+
+.footer ul .box:last-child {
+  margin-left: 80px;
+}
+
+.footer .box a.tit {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer .box a.tit:hover {
+  color: #ccc;
+}
+
+.f-bottom {
+  display: flex;
+  background-color: #000;
+  font-size: 14px;
+  font-weight: 500;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.f-info {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.f-info li {
+  margin: 0px 14px;
+}
+
+.f-info a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.f-info a:hover {
+  text-decoration: underline;
+}
+
+.f-copyright {
+  display: block;
+  margin: 0px 12px;
+}
+
+.f-grnet a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+.f-grnet a:hover {
+  text-decoration: underline;
+}
+

@@ -1,0 +1,587 @@
+/** @format */
+
+.site-header {
+  width: 100%;
+  position: fixed;
+}
+
+/* 回到頂部按鈕 開始 */
+
+#backToTopBtn {
+  display: block;
+  position: fixed;
+  bottom: 30px;
+  height: 44px;
+  right: 70px;
+  z-index: 99;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  background-color: #626262;
+  color: #fff;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 12%;
+  transition: background-color 0.3s ease;
+}
+
+#backToTopBtn:hover {
+  background-color: #555;
+}
+
+/* 回到頂部按鈕 結束 */
+
+/* 麵包屑樣式 開始 */
+.breadcrumb {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 20px;
+}
+
+.breadcrumb li {
+  margin-right: 10px;
+}
+
+.breadcrumb li:not(:last-child)::after {
+  content: ">";
+  margin-left: 10px;
+  color: #999;
+}
+
+.breadcrumb li a {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.breadcrumb li a:hover {
+  color: #666;
+}
+
+.breadcrumb li a.home {
+  color: #474343;
+}
+
+.breadcrumb li a.home:hover {
+  color: #000;
+}
+
+/* 麵包屑樣式 結束 */
+
+.background {
+  position: relative;
+}
+
+.text-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #ffffff;
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 80px;
+  font-family: "Playfair Display", serif;
+  z-index: 1;
+  /* 確保文字在蒙層之上 */
+  /* 其他樣式設置 */
+}
+
+.background img {
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+}
+
+.background::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* 蒙層不透明度 */
+}
+
+.p-maincontent {
+  padding-top: 70px;
+  position: relative;
+}
+
+.p-maincontent .container {
+  margin: 0 auto;
+  max-width: 1440px;
+}
+
+.container .subhead-wrap {
+  width: 100%;
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 10px;
+  border-bottom: 1px solid #333;
+}
+
+.subhead-wrap .subhead {
+  font-size: 36px;
+  font-family: "Playfair Display", serif;
+  font-weight: 800;
+  color: #424040;
+}
+
+.contact-sec {
+  display: flex;
+  margin: 0 auto;
+  padding: 50px 0;
+  border-bottom: 1px solid #000;
+}
+
+.contact-sec:last-child {
+  border-bottom: none;
+}
+
+.contact-sec .left {
+  width: 50%;
+  padding-right: 50px;
+}
+
+.contact-sec .right {
+  width: 50%;
+  padding-left: 75px;
+}
+
+.contact-sec .co-name {
+  color: #fa4438;
+  display: block;
+  font-size: 30px;
+  font-weight: 600;
+  margin: 0 0 20px 0;
+}
+
+.contact-sec .co-info {
+  margin: 20px 0;
+  font-size: 18px;
+}
+
+.contact-sec .co-info li {
+  padding: 16px 8px;
+  border-bottom: 1px solid #eee;
+}
+
+.contact-sec .co-info li:last-child {
+  border-bottom: none;
+}
+
+.contact-sec .co-info li a {
+  text-decoration: none;
+  color: #000;
+}
+
+.contact-sec .co-info li a:hover {
+  color: #fa4438;
+}
+
+.contact-sec .co-map iframe {
+  width: 100%;
+  height: 400px;
+}
+
+.contact-sec .right .co-traffic {
+  position: relative;
+}
+
+.contact-sec .left .co-traffic {
+  position: relative;
+}
+
+.contact-sec .left .co-traffic h4 {
+  margin-left: 58px;
+}
+
+.contact-sec .left .co-traffic p {
+  margin-left: 58px;
+}
+
+.contact-sec .co-traffic li::before {
+  display: inline-block;
+  position: absolute;
+  content: "";
+  width: 54px;
+  height: 54px;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: contain;
+}
+
+.contact-sec .right .co-traffic li::before {
+  left: -60px;
+}
+
+.contact-sec .co-traffic li.type-car::before {
+  background-image: url(../img/traf_car.png);
+}
+
+.contact-sec .co-traffic li.type-train::before {
+  background-image: url(../img/traf_train.png);
+}
+
+.contact-sec .co-traffic li.type-thsr::before {
+  background-image: url(../img/traf_thsr.png);
+}
+
+.contact-sec .co-traffic li h4 {
+  color: #000;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.2;
+  padding: 10px 5px;
+}
+
+.contact-sec .co-traffic li p {
+  margin: 0 0 15px 0;
+  color: #666;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.2;
+  padding: 10px 5px;
+}
+
+/* 聯絡表單開始 */
+
+.co-form {
+  padding: 80px 0;
+  background-color: #f9f9fa;
+}
+
+.co-form .container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+}
+
+.co-form .container .co-form-title {
+  font-size: 32px;
+  margin: 0 auto 20px;
+  padding: 15px 0;
+  font-weight: 500;
+  position: relative;
+  text-align: center;
+}
+
+.co-form .container .co-form-desc {
+  font-size: 16px;
+  font-weight: 300;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.star {
+  color: #fa4438;
+  font-size: 18px;
+  display: inline-block;
+  vertical-align: middle;
+  margin: -2px 5px 0 0;
+  font-style: normal;
+}
+
+.co-form .container .co-form-left-right {
+  display: flex;
+}
+
+.co-form .container .co-f-left {
+  width: 50%;
+  padding: 0 25px;
+}
+
+.co-form .container .co-f-right {
+  width: 50%;
+  padding: 0 25px;
+}
+
+.form-box {
+  display: block;
+  position: relative;
+  margin: 0 auto 15px auto;
+  padding: 0 0 0 120px;
+}
+
+
+.label-style {
+  font-size: 18px;
+  line-height: 1.5;
+  color: #000;
+  padding: 8px 0;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 105px;
+  position: absolute;
+  text-align: right;
+}
+
+.input-style {
+  background-color: #fff;
+  box-shadow: none;
+  border: 1px solid #ddd;
+  height: 42px;
+  padding: 0 10px;
+  width: 100%;
+  max-width: 430px;
+}
+
+.input-style:focus {
+  border-color: #fa4438;
+}
+
+input:not([type="button"]),
+input:not([type="submit"]) {
+  font-size: 18px !important;
+}
+
+.select-style {
+  padding: 0 50px 0 10px;
+  margin: 0 0 15px 0;
+  display: block;
+  width: 100%;
+  height: 42px;
+  line-height: 40px;
+  background: #fff url(../img/select_aw.jpg) right 0 no-repeat;
+  background-size: auto 100%;
+  outline: none;
+  border: 1px solid #ddd;
+  transition: border .15s;
+  font-size: 18px;
+}
+
+.select-style.half {
+  display: inline-block;
+  width: 49%;
+}
+
+.radio-style {
+  padding: 0;
+  margin: 0 5px;
+  display: inline-block;
+  font-weight: normal;
+  white-space: nowrap;
+  line-height: 40px;
+}
+
+.radio-style input:checked+span {
+  border-color: #fa4438;
+  background: #fa4438;
+}
+
+.radio-style input+span {
+  display: inline-block;
+  position: relative;
+  vertical-align: baseline;
+  border: 2px solid #ddd;
+  background: #fff;
+  width: 8px;
+  height: 8px;
+  padding: 3px;
+  margin: 0 12px -3px 0;
+  border-radius: 50%;
+}
+
+.radio-style input:checked+span i {
+  transform: scale(1) rotate(-40deg);
+}
+
+.radio-style input+span i {
+  display: block;
+  position: absolute;
+  width: 9px;
+  height: 4px;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 0 0 2px 2px;
+  transform: scale(0) rotate(-40deg);
+  transition: transform .2s;
+  top: 50%;
+  left: 50%;
+  margin-left: -5px;
+  margin-top: -4px;
+}
+
+.co-f-full {
+  padding: 0 25px;
+}
+
+.textarea-style {
+  background: #fff;
+  height: 135px;
+  padding: 10px;
+  width: 100%;
+  display: block;
+  outline: none;
+  border: 1px solid #ddd;
+  max-width: 1050px;
+}
+
+.agree-term {
+  margin: 50px auto 25px auto;
+  line-height: 1.8;
+  font-size: 18px;
+  text-align: center;
+}
+
+.agree-term a {
+
+  text-decoration: underline;
+  color: #555;
+  margin: 0 5px;
+}
+
+.checkbox-style input+span {
+  display: inline-block;
+  position: relative;
+  vertical-align: baseline;
+  border: 1px solid #ddd;
+  background: #fff;
+  width: 10px;
+  height: 10px;
+  padding: 3px;
+  margin: 0 12px -3px 0;
+  border-radius: 0;
+}
+
+.checkbox-style:hover input+span,
+.checkbox-style:active input+span {
+  border-color: #666;
+}
+
+.checkbox-style input:checked+span {
+  border-color: #fa4438;
+  background: #fa4438;
+}
+
+.checkbox-style:hover input:checked+span,
+.checkbox-style:active input:checked+span {
+  border-color: #bf1522;
+  background: #bf1522;
+}
+
+.checkbox-style input:checked+span i {
+  transform: scale(1) rotate(-40deg);
+}
+
+.checkbox-style input+span i {
+  display: block;
+  position: absolute;
+  width: 9px;
+  height: 4px;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 0 0 2px 2px;
+  transform: scale(0) rotate(-40deg);
+  transition: transform .2s;
+  top: 50%;
+  left: 50%;
+  margin-left: -5px;
+  margin-top: -4px;
+}
+
+.btn-wrap {
+  text-align: center;
+}
+
+.btn-style {
+  margin: 0 auto;
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  width: 160px;
+  height: 50px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 48px;
+  text-align: center;
+  white-space: nowrap;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 4px;
+  border-color: #ffb718;
+  background-color: #ffb718;
+  color: #000;
+  overflow: hidden;
+}
+
+.btn-style:hover {
+  color: #000;
+  background: #ffae35;
+  border-color: #ffae35;
+  cursor: pointer;
+}
+
+
+/* 隐私政策内容样式 */
+.privacy-content {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 40px;
+  z-index: 1002;
+  max-width: 900px;
+  box-sizing: border-box;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 4px;
+}
+
+/* 背景遮罩层样式 */
+.privacy-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1001;
+}
+
+#privacy .text-editor {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.2;
+  text-align: justify;
+}
+
+.mfp-close {
+  width: 40px;
+  height: 40px;
+  top: 0;
+  right: 0;
+  display: inline-block;
+  position: absolute;
+  background-color: #000;
+  border: 0;
+  cursor: pointer;
+}
+
+.mfp-close i {
+  font-size: 30px;
+  color: #eee;
+}
+
+/* 聯絡表單結束 */
+
+input,
+textarea,
+select,
+input[type="text"],
+input[type="radio"],
+input[type="checkbox"] {
+    appearance: none;
+}

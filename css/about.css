@@ -1,0 +1,268 @@
+/** @format */
+
+.site-header {
+  width: 100%;
+  position: fixed;
+}
+
+/* 回到頂部按鈕 開始 */
+
+#backToTopBtn {
+  display: block;
+  position: fixed;
+  bottom: 30px;
+  height: 44px;
+  right: 70px;
+  z-index: 99;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  background-color: #626262;
+  color: #fff;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 12%;
+  transition: background-color 0.3s ease;
+}
+
+#backToTopBtn:hover {
+  background-color: #555;
+}
+
+/* 回到頂部按鈕 結束 */
+
+/* 麵包屑樣式 開始 */
+.breadcrumb {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 20px;
+}
+
+.breadcrumb li {
+  margin-right: 10px;
+}
+
+.breadcrumb li:not(:last-child)::after {
+  content: ">";
+  margin-left: 10px;
+  color: #999;
+}
+
+.breadcrumb li a {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.breadcrumb li a:hover {
+  color: #666;
+}
+
+.breadcrumb li a.home {
+  color: #474343;
+}
+
+.breadcrumb li a.home:hover {
+  color: #000;
+}
+
+/* 麵包屑樣式 結束 */
+
+.background {
+  position: relative;
+}
+
+.text-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #ffffff;
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 80px;
+  font-family: "Playfair Display", serif;
+  z-index: 1; /* 確保文字在蒙層之上 */
+  /* 其他樣式設置 */
+}
+
+.background img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: cover;
+}
+
+.background::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* 蒙層不透明度 */
+}
+
+.p-maincontent {
+  padding-top: 70px;
+  padding-bottom: 70px;
+  position: relative;
+}
+
+.p-maincontent .container {
+  margin: 0 auto;
+  max-width: 1440px;
+}
+
+.container .subhead-wrap {
+  width: 100%;
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 10px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #333;
+}
+
+.subhead-wrap .subhead {
+  font-size: 36px;
+  font-family: "Playfair Display", serif;
+  font-weight: 800;
+  color: #424040;
+}
+
+.container .history-top {
+  position: relative;
+}
+
+.history-top .bg {
+  height: 480px;
+  background: url("../img/milestone_bg.jpg") no-repeat center center;
+}
+
+.theme-title,
+.theme-p {
+  position: absolute;
+  color: #000; /* 文字顏色 */
+  z-index: 1; /* 確保文字在蒙層之上 */
+}
+
+.theme-title {
+  font-weight: 800;
+  font-size: 28px;
+  top: 24%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.theme-p {
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: 20px;
+  line-height: 2;
+}
+
+.history-wrap:before {
+  content: "";
+  z-index: 2;
+  width: 140px;
+  height: 132px;
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 0px;
+  background: url(../img/f_logo.png) no-repeat;
+  background-size: auto 100%;
+  transform: translate(-50%, -50%);
+}
+/* 時間線容器樣式 */
+.history-wrap {
+  position: relative;
+  padding: 50px 0;
+}
+
+/* 水平時間線樣式 */
+.history-line {
+  position: absolute;
+  left: 50%;
+  width: 4px;
+  height: 100%;
+  background-color: #ccc;
+  transform: translateX(-50%);
+}
+
+.history-list {
+  padding-top: 70px;
+}
+
+.history-list > li {
+  position: relative;
+  margin-bottom: -10px;
+  display: flex;
+  align-items: center;
+}
+
+/* 年份樣式 */
+.history-list .year {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  font-size: 20px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  z-index: 1; /* 確保年份在時間線上方 */
+}
+
+/* 事件內容樣式 */
+.event {
+  width: 35%;
+  padding: 30px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.event li {
+  margin-bottom: 5px;
+  font-size: 18px;
+  line-height: 1.5;
+  list-style: circle;
+  list-style-position: inside;
+}
+
+/* 左側事件內容位置 */
+.history-list li:nth-child(odd) .event {
+  margin-left: -5%;
+}
+
+/* 右側事件內容位置 */
+.history-list li:nth-child(even) .event {
+  margin-left: 52%;
+}
+
+.event::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 40%;
+  transform: translateY(-50%);
+  width: 10%;
+  height: 4px;
+  background-color: #ccc;
+  z-index: -1;
+}
+
+.history-list > li:nth-child(odd) .event::after {
+  left: 40%;
+  right: auto;
+}

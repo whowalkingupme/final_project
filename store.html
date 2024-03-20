@@ -1,0 +1,485 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>早安美芝城 | 美味菜單</title>
+
+  <link rel="icon" href="img/egg.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/store.css" />
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tw-city-selector@2.1.1/dist/tw-city-selector.min.js"></script>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="header-logo">
+        <a href="index.html">
+          <img src="img/logo.png" alt="Logo" />
+        </a>
+      </div>
+      <div class="main-navigation">
+        <nav class="header-menu">
+          <ul class="menu">
+            <li><a href="news.html">最新活動</a></li>
+            <li><a href="menu.html">美味菜單</a></li>
+            <li><a href="store.html">門市據點</a></li>
+            <li><a href="about.html">關於我們</a></li>
+            <li><a href="contact.html">聯絡我們</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="icon">
+        <ul>
+          <li>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa-brands fa-line"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <div class="container">
+    <div class="background">
+      <img src="img/ban_store.jpg" alt="ban_news" />
+    </div>
+
+    <div class="p-maincontent">
+      <div class="container">
+        <div class="subhead-wrap">
+          <h2 class="subhead">
+            <span class="big">門市據點</span>
+            <span class="deco">Store</span>
+          </h2>
+          <ul class="breadcrumb">
+            <li>
+              <a href="index.html" title="早安美芝城首頁" class="home"><i class="fa-solid fa-house"></i></a>
+            </li>
+            <li><a href="store.html" title="門市據點">門市據點</a></li>
+          </ul>
+        </div>
+        <div class="stores">
+
+          <div class="city-selector-set">
+
+            <div class="city-selector-header">
+              <h3>門市查詢</h3>
+
+              <div class="select-list">
+                <label for="city">縣市:</label>
+                <!-- 縣市選單 -->
+                <select id="city" name="city" class="county"></select>
+                <!-- 區域選單 -->
+                <label for="district">鄉鎮區:</label>
+                <select id="district" name="district" class="district"></select>
+
+                <label for="keyword">關鍵字:</label>
+                <input type="text" id="keyword" class="input-style" autocomplete="off" />
+                <button onclick="search()">查詢</button>
+              </div>
+
+            </div>
+
+            <div id="result">
+              <!-- <table>
+                <tr>
+                  <th>門市名稱</th>
+                  <th>電話</th>
+                  <th>地址</th>
+                  <th>地圖連結</th>
+                </tr>
+                <tr>
+                  <td>新竹竹光概念店</td>
+                  <td>03-5320570</td>
+                  <td>新竹市北區竹光路97號</td>
+                  <td><a
+                      href="https://www.google.com/maps?q=%E6%96%B0%E7%AB%B9%E5%B8%82%E5%8C%97%E5%8D%80%E7%AB%B9%E5%85%89%E8%B7%AF97%E8%99%9F&amp;sca_esv=581054534&amp;rlz=1C1GCEU_zh-TWTW997TW997&amp;uact=5&amp;gs_lp=Egxnd3Mtd2l6LXNlcnAiHeaWsOerueW4guWMl-WNgOerueWFiei3rzk36JmfMgUQABiiBDIFEAAYogQyBR"
+                      target="_blank"><i class="fa-solid fa-location-dot"></i></a></td>
+                </tr>
+                <tr>
+                  <td>新竹科園概念店</td>
+                  <td>03-5778029</td>
+                  <td>新竹市東區科學園路28號</td>
+                  <td><a
+                      href="https://www.google.com/maps/place/%E6%96%B0%E7%AB%B9%E5%B8%82%E6%9D%B1%E5%8D%80%E7%A7%91%E5%AD%B8%E5%9C%92%E8%B7%AF28%E8%99%9F/@24.78616100000000000000,121.00982670000000000000,17z"
+                      target="_blank"><i class="fa-solid fa-location-dot"></i></a></td>
+                </tr>
+                <tr>
+                  <td>新竹金山概念店</td>
+                  <td>03-5778028</td>
+                  <td>新竹市東區金山街123號</td>
+                  <td><a
+                      href="https://www.google.com/maps/place/300%E6%96%B0%E7%AB%B9%E5%B8%82%E6%9D%B1%E5%8D%80%E9%87%91%E5%B1%B1%E8%A1%97123%E8%99%9F/@24.7769986,121.0237901,3a,75y,130.94h,80.54t/data=!3m6!1e1!3m4!1sI8mqLG-xRq4Tvh33lV29bg!2e0!7i16384!8i8192!4m5!3m4!1s0x3468362f09e41"
+                      target="_blank"><i class="fa-solid fa-location-dot"></i></a></td>
+                </tr>
+                <tr>
+                  <td>新竹經國概念店</td>
+                  <td>03-5266276</td>
+                  <td>新竹市北區經國路2段395號</td>
+                  <td><a
+                      href="http://maps.google.com/maps?q=%E6%96%B0%E7%AB%B9%E5%B8%82%E5%8C%97%E5%8D%80%E7%B6%93%E5%9C%8B%E8%B7%AF2%E6%AE%B5395%E8%99%9F&amp;hl=zh-TW&amp;ie=UTF8&amp;iwloc=A"
+                      target="_blank"><i class="fa-solid fa-location-dot"></i></a></td>
+                </tr>
+                <tr>
+                  <td>新竹活力自由</td>
+                  <td>03-5322809</td>
+                  <td>新竹市北區自由路52號</td>
+                  <td><a
+                      href="http://maps.google.com/maps?q=%E6%96%B0%E7%AB%B9%E5%B8%82%E5%8C%97%E5%8D%80%E8%87%AA%E7%94%B1%E8%B7%AF52%E8%99%9F&amp;hl=zh-TW&amp;ie=UTF8&amp;iwloc=A"
+                      target="_blank"><i class="fa-solid fa-location-dot"></i></a></td>
+                </tr>
+                <tr>
+                  <td>新竹境福</td>
+                  <td>03-5335729</td>
+                  <td>新竹市北區中正路405號</td>
+                  <td><a
+                      href="http://maps.google.com/maps?q=%E6%96%B0%E7%AB%B9%E5%B8%82%E5%8C%97%E5%8D%80%E4%B8%AD%E6%AD%A3%E8%B7%AF405%E8%99%9F&amp;hl=zh-TW&amp;ie=UTF8&amp;iwloc=A"
+                      target="_blank"><i class="fa-solid fa-location-dot"></i></a></td>
+                </tr>
+                <tr>
+                  <td>新竹中山</td>
+                  <td>03-5231787</td>
+                  <td>新竹市北區中山路246號</td>
+                  <td><a
+                      href="http://maps.google.com/maps?q=%E6%96%B0%E7%AB%B9%E5%B8%82%E5%8C%97%E5%8D%80%E4%B8%AD%E5%B1%B1%E8%B7%AF246%E8%99%9F&amp;hl=zh-TW&amp;ie=UTF8&amp;iwloc=A"
+                      target="_blank"><i class="fa-solid fa-location-dot"></i></a></td>
+                </tr>
+                <tr>
+                  <td>新竹北大概念店</td>
+                  <td>03-5330388</td>
+                  <td>新竹市北區北大路65號</td>
+                  <td><a
+                      href="http://maps.google.com/maps?q=%E6%96%B0%E7%AB%B9%E5%B8%82%E5%8C%97%E5%8D%80%E5%8C%97%E5%A4%A7%E8%B7%AF65%E8%99%9F&amp;hl=zh-TW&amp;ie=UTF8&amp;iwloc=A"
+                      target="_blank"><i class="fa-solid fa-location-dot"></i></a></td>
+                </tr>
+              </table> -->
+            </div>
+
+            <div id="pagination">
+              <!-- <button disabled="" class="prev"><i class="fa-solid fa-arrow-left"></i></button>
+              <button class="pagination-button active">1</button>
+              <button class="pagination-button">2</button>
+              <button class="pagination-button">3</button>
+              <button class="pagination-button">4</button>
+              <button class="pagination-button">5</button>
+              <button class="pagination-button">6</button>
+              <button class="pagination-button">7</button>
+              <button class="next"><i class="fa-solid fa-arrow-right"></i></button> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="f-top">
+      <div class="f-logo">
+        <img src="./img/f_logo.png" alt="f-logo" />
+      </div>
+      <div>
+        <ul>
+          <li class="box">
+            <span class="tit">認識我們</span>
+            <ul>
+              <li><a href="#" title="發展沿革">發展沿革</a></li>
+              <li><a href="#" title="經營理念">經營理念</a></li>
+              <li><a href="#" title="品牌優勢">品牌優勢</a></li>
+            </ul>
+          </li>
+          <li class="box">
+            <span class="tit">企業責任</span>
+            <ul>
+              <li><a href="#" title="安心食材">安心食材</a></li>
+              <li><a href="#" title="合作伙伴">合作伙伴</a></li>
+              <li><a href="#" title="社會關懷">社會關懷</a></li>
+            </ul>
+          </li>
+          <li class="box">
+            <span class="tit">夥伴招募</span>
+            <ul>
+              <li><a href="#" title="夥伴招募">夥伴招募</a></li>
+              <li><a href="#" title="我們的福利">我們的福利</a></li>
+            </ul>
+          </li>
+          <li class="box">
+            <a href="#" title="消息公告" class="tit">消息公告</a>
+            <a href="#" title="美味菜單" class="tit">美味菜單</a>
+            <a href="#" title="門市據點" class="tit">門市據點</a>
+            <a href="#" title="聯絡我們" class="tit">聯絡我們</a>
+            <a href="#" title="網站地圖" class="tit">網站地圖</a>
+            <a href="#" title="隱私權政策" class="tit">隱私權政策</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="f-bottom">
+      <ul class="f-info">
+        <li class="address">台南市安平工業區新平路7-1號</li>
+        <li class="build">
+          公司電話&nbsp;<a href="tel:06-2635678" title="致電06-2635678">06-2635678</a>
+        </li>
+        <li class="call">
+          創業專線&nbsp;<a href="tel:+886800076077" title="致電0800076077">0800076077</a>
+        </li>
+      </ul>
+      <span class="f-copyright">©&nbsp;2024&nbsp;Good&nbsp;Morning&nbsp;MACC.&nbsp;All&nbsp;Rights&nbsp;Reserved.</span>
+      <span class="f-grnet"><a href="#" target="_blank" title="網頁設計">網頁設計</a>&nbsp;|&nbsp;&nbsp;資展國際</span>
+    </div>
+  </footer>
+  <button id="backToTopBtn" title="回到頂部">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script>
+
+    const backToTopBtn = document.getElementById("backToTopBtn");
+
+    // 當用戶滾動頁面時執行函數
+    window.onscroll = function () {
+      scrollFunction();
+    };
+
+    // 顯示或隱藏按鈕
+    function scrollFunction() {
+      if (
+        document.body.scrollTop > 20 ||
+        document.documentElement.scrollTop > 20
+      ) {
+        backToTopBtn.style.display = "block";
+      } else {
+        backToTopBtn.style.display = "none";
+      }
+    }
+
+    // 點擊按鈕，回到頁面頂部
+    backToTopBtn.addEventListener("click", function () {
+      smoothScrollToTop();
+    });
+
+    // 平滑滾動到頁面頂部
+    function smoothScrollToTop() {
+      const startPosition = window.pageYOffset; // 獲取當前頁面的垂直滾動位置
+      let startTime = null; // 初始化開始時間為 null
+
+      function animation(currentTime) {
+        // 定義動畫函數
+        if (startTime === null) startTime = currentTime; // 如果開始時間為 null,則將其設置為當前時間
+
+        const elapsedTime = currentTime - startTime; // 計算經過的時間
+        const duration = 500; // 設置動畫持續時間為 500 毫秒
+        const progress = Math.min(elapsedTime / duration, 1); // 計算動畫進度,最大為 1
+
+        // 計算新的滾動位置,使用三次方程 (1 - progress)^3 模擬從慢到快的過渡效果
+        const y = startPosition * (1 - progress ** 3);
+
+        window.scrollTo(0, y); // 將頁面滾動到新的位置
+
+        if (progress < 1) {
+          // 如果動畫還未完成
+          window.requestAnimationFrame(animation); // 請求下一幀動畫
+        }
+      }
+
+      window.requestAnimationFrame(animation); // 啟動動畫
+    }
+
+    let storeData = [];
+    let currentPage = 1; // 當前頁碼
+    const maxItemsPerPage = 15; // 每頁最多顯示的數據數量
+    const pageRange = 7; // 分頁器顯示的頁碼範圍
+
+    let storedCity, storedDistrict, storedKeyword;
+
+    // 從伺服器讀取 JSON 檔案
+    axios.get('http://127.0.0.1:5500/data/stores.json')
+      .then(response => {
+        storeData = response.data;
+        renderResults(storeData);
+      })
+      .catch(error => console.error(error));
+
+    new TwCitySelector({
+      el: '.city-selector-set',
+      elCounty: '.county',
+      elDistrict: '.district',
+    });
+
+    function search() {
+      const selectedCity = document.getElementById('city').value;
+      const selectedDistrict = document.getElementById('district').value;
+      const keyword = document.getElementById('keyword').value.trim().toLowerCase();
+
+      const filteredStores = storeData.filter(store => {
+        const address = store.address.toLowerCase();
+        return (
+          (!selectedCity || address.includes(selectedCity)) &&
+          (!selectedDistrict || address.includes(selectedDistrict)) &&
+          (!keyword || address.includes(keyword) || store.storeNmae.toLowerCase().includes(keyword))
+        );
+      });
+
+      renderResults(filteredStores);
+    }
+
+    function renderResults(stores) {
+      const resultDiv = document.getElementById('result');
+      resultDiv.innerHTML = '';
+
+      const paginationDiv = document.getElementById('pagination');
+      paginationDiv.innerHTML = '';
+
+      if (stores.length === 0) {
+        resultDiv.textContent = '您所篩選的條件沒有符合資訊';
+      } else {
+        const totalPages = Math.ceil(stores.length / maxItemsPerPage);
+        const startIndex = (currentPage - 1) * maxItemsPerPage;
+        const endIndex = startIndex + maxItemsPerPage;
+        const displayedStores = stores.slice(startIndex, endIndex);
+
+        const table = document.createElement('table');
+        const headerRow = document.createElement('tr');
+        const headers = ['門市名稱', '電話', '地址', '地圖連結'];
+        headers.forEach(header => {
+          const th = document.createElement('th');
+          th.textContent = header;
+          headerRow.appendChild(th);
+        });
+        table.appendChild(headerRow);
+
+        displayedStores.forEach(store => {
+          const row = document.createElement('tr');
+
+          const storeNameCell = document.createElement('td');
+          storeNameCell.textContent = store.storeNmae;
+          row.appendChild(storeNameCell);
+
+          const phoneCell = document.createElement('td');
+          phoneCell.textContent = store.phone;
+          row.appendChild(phoneCell);
+
+          const addressCell = document.createElement('td');
+          addressCell.textContent = store.address;
+          row.appendChild(addressCell);
+
+          const mapLinkCell = document.createElement('td');
+          const mapLink = document.createElement('a');
+          mapLink.href = store['map-href'];
+          mapLink.target = '_blank';
+          mapLink.innerHTML = '<i class="fa-solid fa-location-dot"></i>';
+          mapLinkCell.appendChild(mapLink);
+          row.appendChild(mapLinkCell);
+
+          table.appendChild(row);
+        });
+
+        resultDiv.appendChild(table);
+
+        // 添加分頁器
+        renderPagination(totalPages);
+      }
+    }
+
+    function renderPagination(totalPages) {
+      const paginationDiv = document.getElementById('pagination');
+      paginationDiv.innerHTML = '';
+
+      const prevButton = document.createElement('button');
+      prevButton.innerHTML = '<i class="fa-solid fa-arrow-left"></i>';
+      prevButton.classList.add('prev');
+      prevButton.disabled = currentPage === 1;
+      prevButton.addEventListener('click', () => {
+        currentPage--;
+        const filteredStores = filterStores();
+        renderResults(filteredStores);
+      });
+      paginationDiv.appendChild(prevButton);
+
+      let startPage = Math.max(1, currentPage - Math.floor(pageRange / 2));
+      let endPage = Math.min(totalPages, startPage + pageRange - 1);
+
+      if (totalPages < pageRange) {
+        endPage = totalPages;
+      } else {
+        startPage = Math.max(1, currentPage - Math.floor(pageRange / 2));
+        endPage = Math.min(totalPages, startPage + pageRange - 1);
+      }
+
+      for (let i = startPage; i <= endPage; i++) {
+        const pageButton = document.createElement('button');
+        pageButton.textContent = i;
+        pageButton.classList.add('pagination-button');
+        if (i === currentPage) {
+          pageButton.classList.add('active');
+        }
+        pageButton.addEventListener('click', () => {
+          currentPage = i;
+          const filteredStores = filterStores();
+          renderResults(filteredStores);
+        });
+        paginationDiv.appendChild(pageButton);
+      }
+
+      const nextButton = document.createElement('button');
+      nextButton.innerHTML = '<i class="fa-solid fa-arrow-right"></i>';
+      nextButton.disabled = currentPage === totalPages;
+      nextButton.classList.add('next');
+      nextButton.addEventListener('click', () => {
+        currentPage++;
+        const filteredStores = filterStores();
+        renderResults(filteredStores);
+      });
+      paginationDiv.appendChild(nextButton);
+    }
+
+    function filterStores() {
+      const selectedCity = document.getElementById('city').value;
+      const selectedDistrict = document.getElementById('district').value;
+      const keyword = document.getElementById('keyword').value.trim().toLowerCase();
+
+      return storeData.filter(store => {
+        const address = store.address.toLowerCase();
+        return (
+          (!selectedCity || address.includes(selectedCity)) &&
+          (!selectedDistrict || address.includes(selectedDistrict)) &&
+          (!keyword || address.includes(keyword) || store.storeNmae.toLowerCase().includes(keyword))
+        );
+      });
+    }
+
+    // 初始化時渲染全部資料
+    renderResults(storeData);
+  </script>
+</body>
+
+</html>
